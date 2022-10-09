@@ -1,23 +1,31 @@
 // Template literals
 
-let person = {
+const person = {
     name: "Zodiac Hasbro",
     age: 56
 };
 
-let greeting = 'Hello, my name is';
+const greeting = `Hello, my name is ${person.name};!
+I am ${person.age} years old`;
 
 console.log(greeting);
 
-let result = {
+
+
+const result = {
     success: ["max-length", "no=amd", "prefer-arrow-functions"],
     failure: ["no-var", "var-on-top", "linebreak"],
     skipped: ["id-blacklist", "no-dup-keys"]
 };
 function makeList(arr) {
-    const resultDisplayArray = null;
+    const resultDisplayArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        resultDisplayArray.push(`<li class="text-warning">${arr[i]}</li>`)
+    }
 
     return resultDisplayArray;
 }
 
 const resultDisplayArray = makeList(result.failure);
+
+console.log(resultDisplayArray)
